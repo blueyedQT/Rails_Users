@@ -1,0 +1,53 @@
+Commands Used:
+
+1. Create a new project
+
+	rails new user_login_project
+	bundle install
+
+2. Create a new modle called "User"
+
+	rails g model User first_name:string, last_name:string, email_address:string, age:integer
+	rake db:migrate
+	rails s
+
+3. Create a few records in the table
+
+	rails c
+	Hirb.enable
+	katrina = User.new(first_name:"Katrina", last_name:"Sanford")
+	katrina.valid?
+	katrina.new_record?
+	katrina.save
+
+4. Add validations to the model and use ruby console
+
+	justin = User.new(first_name="Justin", last_name:"S", age:"2")
+	justin.valid?
+	justin.errors.full_messages
+
+5. Retrieve all users
+	
+	User.all
+
+6. Get first user
+
+	User.first
+
+7. Get last user
+
+	User.last
+
+8. Get users sorted by their first name DESC
+
+	User.order("first_name DESC")
+
+9. Get the record of the user whose id is 3 and update the person's last name to something else
+
+	User.find(3).update(last_name:"Johnson")
+
+10. Delete record of user whose id is 4
+
+	User.find(4).destroy
+
+
